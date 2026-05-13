@@ -1,0 +1,6 @@
+path: /home/sarit/Desktop/my_files/home_assignments/treex/data
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: bud

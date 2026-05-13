@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# IDE
+.idea/
+
+# Ultralytics / outputs
+runs/
+predictions/
+
+# Reports generated automatically
+reports/*.json
+reports/*.png
+reports/*.jpg
+
+# OS
+.DS_Store
+
+# Keep dataset config
+!data/bud.yaml
+!data/config.yaml
+
+data/images/
+data/labels/
+

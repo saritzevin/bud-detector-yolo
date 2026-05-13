@@ -1,0 +1,78 @@
+
+path: /home/sarit/Desktop/my_files/home_assignments/treex/treex-dataset
+output_dir: /home/sarit/Desktop/my_files/home_assignments/treex/data
+weights_path: /home/sarit/Desktop/my_files/home_assignments/treex/weights/best.pt
+
+train: images/train
+val: images/val
+test: images/test
+
+train_ratio: 0.7
+val_ratio: 0.15
+seed: 42
+
+img_exts:
+  - .jpg
+  - .jpeg
+  - .png
+  - .JPG
+  - .JPEG
+  - .PNG
+
+
+training:
+  data: data/bud.yaml
+  model: yolo11n.pt
+  imgsz: 1024
+  epochs: 100
+  batch: 4
+  seed: 42
+  project: runs
+  name: bud_detector
+
+  params:
+    optimizer: AdamW
+    lr0: 0.001
+    weight_decay: 0.0005
+    patience: 30
+    pretrained: true
+    deterministic: true
+
+    mosaic: 0.3
+    close_mosaic: 20
+
+    degrees: 5.0
+    translate: 0.1
+    scale: 0.5
+    fliplr: 0.5
+
+    hsv_h: 0.015  # hue
+    hsv_s: 0.4    # saturation
+    hsv_v: 0.4    # brightness
+
+
+inference:
+  source: data/images/test
+  output: predictions
+  imgsz: 1024
+  conf: 0.1
+  iou: 0.7
+  save_txt: true
+  save_conf: true
+
+
+validation:
+  data: data/bud.yaml
+  split: val
+  imgsz: 1024
+  conf: 0.01
+  iou: 0.7
+  plots: true
+  output_metrics: reports/val_metrics.json
+
+
+visualize:
+  image: True
+  label: True
+  format: seg  # choices=["seg", "bbox"]
+  num_samples: 5
