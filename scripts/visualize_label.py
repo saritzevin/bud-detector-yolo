@@ -19,7 +19,7 @@ def main(cfg):
     model = YOLO(cfg["weights_path"])
 
     # Dataset images
-    images_dir = Path(cfg["path"], "images")
+    images_dir = Path(cfg["output_dir"], "images", 'test')
     imgs = list(images_dir.glob("*"))
     samples = random.sample(imgs, min(num_samples, len(imgs)))
 
@@ -57,7 +57,7 @@ def main(cfg):
             y2 = int((yc + bh / 2) * h)
 
             # Red = GT
-            cv2.rectangle(vis, (x1, y1), (x2, y2), (255, 0, 0), 1)
+            cv2.rectangle(vis, (x1, y1), (x2, y2), (255, 0, 0), 2)
 
         # =========================
         # Draw Predictions

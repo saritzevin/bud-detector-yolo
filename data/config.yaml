@@ -55,7 +55,7 @@ inference:
   source: data/images/test
   output: predictions
   imgsz: 1024
-  conf: 0.1
+  conf: 0.5
   iou: 0.7
   save_txt: true
   save_conf: true

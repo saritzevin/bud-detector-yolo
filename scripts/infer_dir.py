@@ -33,6 +33,7 @@ def main(cfg):
         project=output,             # root output folder
         name="results",             # subfolder name
         exist_ok=True,              # overwrite if exists
+        show_labels=False,
     )
 
     print(f"Predictions saved to: {output}/results")
