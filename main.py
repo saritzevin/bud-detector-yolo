@@ -28,5 +28,3 @@ if __name__ == '__main__':
     run(cfg_path="data/config.yaml")
 
 
-# todo - in readme - add results!!!
-# todo - in DESIGN_AND_REASONING - add results!!!
